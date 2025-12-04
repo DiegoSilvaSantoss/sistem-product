@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="./uploadtxt/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>1 - Upload TXT (Inventário)</title>
+</head>
+<body>
+  <div class="card">
+    <h1>1 — Upload do arquivo TXT</h1>
+    <div class="small muted">Selecione o arquivo TXT exportado do sistema. O parser tenta identificar linhas que representam produtos (linhas iniciadas com <code>*</code>), extrair código (N.C.E.), descrição e saldo.</div>
+
+    <div style="margin-top:12px" class="row">
+      <input id="fileInput" type="file" accept=".txt" />
+      <button id="parseBtn" class="pill">Processar arquivo</button>
+      <button id="clearProducts" style="background:#111827;color:#cfeefb;border-radius:999px;padding:8px 12px;border:1px solid rgba(255,255,255,0.04);cursor:pointer">Limpar produtos</button>
+    </div>
+
+    <div class="actions">
+      <div class="small muted">Chave usada: <strong>N.C.E. (código)</strong>. Checklist existente é preservado/mesclado.</div>
+    </div>
+
+    <div style="margin-top:12px">
+      <h3 style="margin:8px 0 6px 0;font-size:14px">Preview (até 50 itens detectados)</h3>
+      <pre id="preview">Nenhum arquivo processado ainda.</pre>
+    </div>
+
+    <details>
+      <summary class="small muted">Como o parser trabalha</summary>
+      <div class="small">
+        Ele procura linhas iniciadas por <code>*</code>, encontra o primeiro token numérico com 3+ dígitos como <strong>código</strong>, encontra o último token numérico como <strong>saldo</strong> (suporta vírgula ou ponto) e monta a descrição com os tokens entre código e saldo. Se seu TXT usar outro padrão, eu posso ajustar.
+      </div>
+    </details>
+
+    <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+      <button id="downloadRaw" style="background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted);padding:8px 12px;border-radius:8px;cursor:pointer">Baixar produtos (JSON)</button>
+      <button id="loadExample" style="background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted);padding:8px 12px;border-radius:8px;cursor:pointer">Carregar exemplo (somente demo)</button>
+    </div>
+  </div>
+
+  <a href="./checklist.html">CHECK LIST</a>
+
+</body>
+<script src="./uploadtxt/javascript.js"></script>
+</html>
+

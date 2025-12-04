@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <link rel="stylesheet" href="./checklit/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2 - Check List (Editor)</title>
+</head>
+<body>
+  <div class="card">
+    <h1>2 — Check List (Editor)</h1>
+    <div class="muted">Marque produtos como <strong>Exposto</strong>, ajuste se estão <strong>Em estoque</strong> e adicione <strong>Observações</strong>. Tudo é salvo no <em>localStorage</em>.</div>
+
+    <div class="controls">
+      <input id="q" class="search" placeholder="Buscar por código ou descrição" />
+      <select id="filter" class="filter">
+        <option value="all">Todos</option>
+        <option value="missing">Não na última carga</option>
+        <option value="zero">Saldo = 0</option>
+        <option value="exposed">Somente expostos</option>
+      </select>
+      <button id="selectAll" class="pill">Marcar todos visíveis</button>
+      <button id="clearChecks" style="background:#111827;color:#cfeefb;border-radius:999px;padding:8px 12px;border:1px solid rgba(255,255,255,0.04);cursor:pointer">Limpar checks</button>
+    </div>
+
+    <div id="list"></div>
+
+    <div style="margin-top:12px;display:flex;gap:8px">
+      <button id="exportBtn" class="pill">Exportar checklist (JSON)</button>
+      <button id="importBtn" style="background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted);padding:8px 12px;border-radius:8px;cursor:pointer">Importar checklist (JSON)</button>
+      <input id="fileImport" type="file" accept="application/json" style="display:none" />
+    </div>
+  </div>
+
+  <a href="./upload.html">UPLOAD TXT</a><br><br>
+  <a href="./painel.html">PAINEL</a>
+
+</body>
+<script src="./checklit/javascript.js"></script>
+</html>

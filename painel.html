@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="stylesheet" href="./painel/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3 - Painel Principal</title>
+</head>
+
+<body>
+  <div class="card">
+    <h1>3 — Painel Principal</h1>
+    <div class="muted">Filtro e export. Os dados são a junção entre a última carga (Upload) e o Checklist.</div>
+
+    <div class="controls">
+      <input id="q" class="search" placeholder="Pesquisar por código ou descrição" />
+      <select id="view" class="filter">
+        <option value="all">Todos</option>
+        <option value="exposed">Expostos</option>
+        <option value="inStock">Em estoque (saldo&gt;0)</option>
+        <option value="zero">Saldo 0</option>
+        <option value="new">Novos (sem check)</option>
+      </select>
+      <button id="refresh" class="pill">Atualizar</button>
+      <button id="exportJson"
+        style="background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted);padding:8px 12px;border-radius:8px;cursor:pointer">Exportar
+        JSON</button>
+      <button id="exportCsv" class="pill">Baixar CSV</button>
+    </div>
+
+    <div style="margin-top:12px" id="info" class="muted"></div>
+
+    <div style="margin-top:12px;overflow:auto;max-height:560px">
+      <table id="table">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Descrição</th>
+            <th>Saldo</th>
+            <th>Exposto</th>
+            <th>Em Estoque</th>
+            <th>Observação</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <a href="./upload.html">CHECK LIST</a><br><br>
+</body>
+<script src="./painel/javascript.js"></script>
+
+</html>

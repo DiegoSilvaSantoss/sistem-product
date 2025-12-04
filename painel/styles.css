@@ -1,0 +1,92 @@
+    :root {
+        --bg: #071025;
+        --card: #071826;
+        --muted: #9aa4b2;
+        --accent: #06b6d4;
+        --ok: #10b981
+    }
+
+    body {
+        font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+        background: linear-gradient(180deg, #071025 0%, #07182b 100%);
+        color: #e6eef6;
+        margin: 0;
+        padding: 24px
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 18px;
+        border-radius: 10px;
+        box-shadow: 0 6px 24px rgba(2, 6, 23, 0.6);
+        max-width: 1200px;
+        margin: 0 auto
+    }
+
+    h1 {
+        margin: 0 0 8px 0;
+        font-size: 18px
+    }
+
+    .controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: 8px
+    }
+
+    .search {
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        background: transparent;
+        color: inherit;
+        flex: 1
+    }
+
+    .filter {
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        background: transparent;
+        color: inherit
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px
+    }
+
+    th,
+    td {
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        text-align: left;
+        font-size: 13px
+    }
+
+    th {
+        color: var(--muted);
+        font-weight: 600
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 6px 8px;
+        border-radius: 999px;
+        font-size: 12px
+    }
+
+    .muted {
+        color: var(--muted)
+    }
+
+    button.pill {
+        background: linear-gradient(90deg, var(--accent), #7dd3fc);
+        border: 0;
+        color: #042f3a;
+        padding: 8px 12px;
+        border-radius: 999px;
+        cursor: pointer
+    }
